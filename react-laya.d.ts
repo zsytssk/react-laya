@@ -25,6 +25,11 @@ export interface LayaEventProps {
 type PropsOfClass<T> = { [P in keyof T]?: T[P] };
 type PropsExcept<T, U> = { [P in keyof T]?: T[P] } & { [P in keyof U]?: never };
 
+/** Stage */
+export class Stage extends React.Component<Konva.Stage, LayaEventProps> {
+  getStage(): Laya.Stage;
+}
+
 declare class LayaNodeComponent<
   Node extends Laya.Node,
   Props = PropsOfClass<Laya.Node>
@@ -101,6 +106,10 @@ export class ProgressBar extends LayaNodeComponent<
 export class TextInput extends LayaNodeComponent<
   Laya.TextInput,
   PropsOfClass<Laya.TextInput>
+> {}
+export class Text extends LayaNodeComponent<
+  Laya.Text,
+  PropsOfClass<Laya.Text>
 > {}
 export class Dialog extends LayaNodeComponent<
   Laya.Dialog,

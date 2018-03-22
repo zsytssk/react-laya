@@ -13,7 +13,7 @@ const React = require("react");
 const ReactFiberReconciler = require("react-reconciler");
 const ReactDOMFrameScheduling = require("./ReactDOMFrameScheduling");
 const ReactDOMComponentTree = require("./ReactDOMComponentTree");
-const TYPES = require("./TYPES");
+const TYPES = require("./types");
 
 const { Component } = React;
 
@@ -83,9 +83,6 @@ function setAttrs(instance, props) {
 
 class Stage extends Component {
   componentDidMount() {
-    const { height, width } = this.props;
-
-    Laya.init(width, height);
     this._stage = Laya.stage;
     applyNodeProps(this._stage, this.props);
 
@@ -97,7 +94,6 @@ class Stage extends Component {
     const props = this.props;
 
     applyNodeProps(this._stage, this.props, prevProps);
-
     LayaRenderer.updateContainer(this.props.children, this._mountNode, this);
   }
 
@@ -143,6 +139,8 @@ const LayaRenderer = ReactFiberReconciler({
 
     const instance = new NodeClass();
     applyNodeProps(instance, props);
+
+    return instance;
   },
 
   createTextInstance(text, rootContainerInstance, internalInstanceHandle) {

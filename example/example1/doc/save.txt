@@ -1,0 +1,8 @@
+## 可以使用 react 的部分
+
+* 事实上除了 dom 节点渲染逻辑 其他都可以使用
+* 。。。
+
+* return ReactDOMComponentTree.getNodeFromInstance(this);
+
+* ReactMultiChild.Mixin

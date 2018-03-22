@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowJs": true,
+    "sourceMap": true,
+    "outFile": "./dist/main.min.js",
+    "rootDir": "./src",
+    "module": "system",
+    "skipLibCheck": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "skipDefaultLibCheck": true
+  },
+  "include": ["./dist/libs", "./dist/src/ui", "./typings", "./src"]
+}

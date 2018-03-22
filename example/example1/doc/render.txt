@@ -1,0 +1,3 @@
+* @note
+  * 最顶级的 render 和每一个 component 的 render 都是相同逻辑
+  * 解析子类放在父类中

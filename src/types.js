@@ -17,13 +17,13 @@ const TYPES = {
   Label: "Label",
   CheckBox: "CheckBox",
   Radio: "Radio",
-  TextArea: "TextArea",
   Tree: "Tree",
   ViewStact: "ViewStact",
   RadioGroup: "RadioGroup",
   Panel: "Panel",
   ProgressBar: "ProgressBar",
   TextInput: "TextInput",
+  Text: "Text",
   Dialog: "Dialog",
   FontClip: "FontClip",
   TextArea: "TextArea",
@@ -35,6 +35,4 @@ const TYPES = {
   Skeleton: "Skeleton"
 };
 
-module.exports = {
-  TYPES
-};
+module.exports = TYPES;

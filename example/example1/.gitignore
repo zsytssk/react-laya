@@ -1,0 +1,9 @@
+node_modules/
+typings/
+
+# laya
+dist/release
+dist/release
+dist/src/*
+dist/bin/*
+!dist/bin/*.html

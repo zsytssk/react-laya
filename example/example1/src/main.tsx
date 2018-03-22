@@ -1,10 +1,3 @@
-# install
-
-`npm install react-laya -save`
-
-# example
-
-```tsx
 import * as React from "react";
 import { render } from "react-dom";
 import { Stage, Text, Image } from "react-laya";
@@ -86,8 +79,3 @@ Laya.init(500, 300);
 var renderelement = document.querySelector("#layaContainer div");
 let app = <App />;
 render(app, renderelement);
-```
-
-# inspiration
-
-copy most code copy from [react-konva](https://github.com/lavrton/react-konva)

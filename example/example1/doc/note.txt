@@ -1,33 +1,13 @@
-## @todo
+## 2018-03-22 10:19:18
 
-* laya export
+* @todo
+  * export 引用模块
+  * .d.ts
 
-  * 有哪些 Laya....
-  * .d.ts ...
-    * 绑定事件要特殊处理 on
-    * 一个个的特殊属性
-    * typescript keyof delete 私有属性
-
-* @dif
-
-  * graphic
-  * fillTexture
-
-* @ques 要不要把方法排除掉
-
-* ref 里面 node 不是我想要的类型
-
-* webgl stage 的通用设置...
-  * 需不需要将 Laya.stage init, 应该要这样的
-
-## --------
-
-* @ques
+- @ques
 
   * Laya node change index
   * laya 能不能把 canvas 放到特定的 div 中
-  * getPublicInstance 是不是 核心位置 是 api 的一部分
-  * getNativeNode
 
 - @ques \_applyProps 会不会用在 react 核心位置 是 api 的一部分
 
