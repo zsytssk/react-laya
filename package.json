@@ -1,13 +1,8 @@
 {
   "name": "react-laya",
   "description": "React binding to canvas element via laya framework",
-  "version": "1.7.1",
-  "keywords": [
-    "react",
-    "canvas",
-    "jsx",
-    "laya"
-  ],
+  "version": "0.1.0",
+  "keywords": ["react", "canvas", "jsx", "laya"],
   "bugs": "https://github.com/zsytssk/react-laya/issues",
   "license": "MIT",
   "licenses": "MIT",
@@ -17,8 +12,6 @@
     "url": "git@github.com:zsytssk/react-laya.git"
   },
   "dependencies": {
-    "@types/react": "^16.0.40",
-    "@types/react-dom": "^16.0.4",
     "fbjs": "^0.8.16",
     "react-reconciler": "^0.7.0"
   },
@@ -27,6 +20,8 @@
     "react-dom": "16.x"
   },
   "devDependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
     "chai": "^4.1.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -35,9 +30,5 @@
     "react-dom": "16.x"
   },
   "typings": "react-laya.d.ts",
-  "files": [
-    "README.md",
-    "src",
-    "react-laya.d.ts"
-  ]
+  "files": ["README.md", "src", "react-laya.d.ts"]
 }
