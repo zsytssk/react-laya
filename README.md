@@ -4,6 +4,8 @@
 
 # example
 
+[completecode](https://github.com/zsytssk/react-laya/tree/master/example/example1)
+
 ```tsx
 import * as React from "react";
 import { render } from "react-dom";
