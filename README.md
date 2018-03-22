@@ -92,4 +92,4 @@ render(app, renderelement);
 
 # inspiration
 
-copy most code copy from [react-konva](https://github.com/lavrton/react-konva)
+* [react-konva](https://github.com/lavrton/react-konva)
