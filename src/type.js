@@ -1,0 +1,40 @@
+const TYPES = {
+  View: "View",
+  FontClip: "FontClip",
+  Box: "Box",
+  HBox: "HBox",
+  VBox: "VBox",
+  Image: "Image",
+  Button: "Button",
+  Clip: "Clip",
+  ComboBox: "ComboBox",
+  Tab: "Tab",
+  VScrollBar: "VScrollBar",
+  HScrollBar: "HScrollBar",
+  VSlider: "VSlider",
+  HSlider: "HSlider",
+  List: "List",
+  Label: "Label",
+  CheckBox: "CheckBox",
+  Radio: "Radio",
+  TextArea: "TextArea",
+  Tree: "Tree",
+  ViewStact: "ViewStact",
+  RadioGroup: "RadioGroup",
+  Panel: "Panel",
+  ProgressBar: "ProgressBar",
+  TextInput: "TextInput",
+  Dialog: "Dialog",
+  FontClip: "FontClip",
+  TextArea: "TextArea",
+  Sprite: "Sprite",
+  HTMLDivElement: "HTMLDivElement",
+  GridEditor: "GridEditor",
+  Animation: "Animation",
+  Templet: "Templet",
+  Skeleton: "Skeleton"
+};
+
+module.exports = {
+  TYPES
+};

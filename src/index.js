@@ -13,6 +13,7 @@ const React = require("react");
 const ReactFiberReconciler = require("react-reconciler");
 const ReactDOMFrameScheduling = require("./ReactDOMFrameScheduling");
 const ReactDOMComponentTree = require("./ReactDOMComponentTree");
+const TYPES = require("./TYPES");
 
 const { Component } = React;
 
@@ -115,14 +116,6 @@ class Stage extends Component {
     return "";
   }
 }
-
-const LAYA_NODES = ["Sprite", "Text", "Image", "Button", "Box"];
-
-const TYPES = {};
-
-LAYA_NODES.forEach(function(nodeName) {
-  TYPES[nodeName] = nodeName;
-});
 
 const UPDATE_SIGNAL = {};
 

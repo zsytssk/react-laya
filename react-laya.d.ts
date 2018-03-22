@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export interface LayaNodeProps {
+export interface LayaEventProps {
   onMouseOver?(evt: any): void;
   onMouseMove?(evt: any): void;
   onMouseOut?(evt: any): void;
@@ -10,109 +10,126 @@ export interface LayaNodeProps {
   onMouseUp?(evt: any): void;
   onWheel?(evt: any): void;
   onClick?(evt: any): void;
-  onDblClick?(evt: any): void;
+  onRightClick?(evt: any): void;
+  onDoubleClick?(evt: any): void;
   onTouchStart?(evt: any): void;
   onTouchMove?(evt: any): void;
   onTouchEnd?(evt: any): void;
-  onTap?(evt: any): void;
-  onDblTap?(evt: any): void;
   onDragStart?(evt: any): void;
   onDragMove?(evt: any): void;
   onDragEnd?(evt: any): void;
+  onDragEnd?(evt: any): void;
+  onResize?(evt: any): void;
 }
 
-export class LayaNodeComponent<
+type PropsOfClass<T> = { [P in keyof T]?: T[P] };
+type PropsExcept<T, U> = { [P in keyof T]?: T[P] } & { [P in keyof U]?: never };
+
+declare class LayaNodeComponent<
   Node extends Laya.Node,
-  Props = Konva.NodeConfig
-> extends React.Component<Props & KonvaNodeProps> {
+  Props = PropsOfClass<Laya.Node>
+> extends React.Component<Props & LayaEventProps> {
   getPublicInstance(): Node;
-  getNativeNode(): Node;
-  // putEventListener(type: string, listener: Function): void;
-  // handleEvent(event: Event): void;
 }
 
-export class KonvaContainerComponent<
-  Container extends Konva.Container,
-  Props = Konva.ContainerConfig
-> extends React.Component<Props & KonvaNodeProps> {
-  // moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex): void;
-  // createChild(child, afterNode, mountImage): void;
-  // removeChild(child, node): void;
-  // updateChildrenAtRoot(nextChildren, transaction): void;
-  // mountAndInjectChildrenAtRoot(children, transaction): void;
-  // updateChildren(nextChildren, transaction, context): void;
-  // mountAndInjectChildren(children, transaction, context): void;
-  // mountAndAddChildren(): void;
-}
+// ui
+export class HBox extends LayaNodeComponent<
+  Laya.HBox,
+  PropsOfClass<Laya.HBox>
+> {}
+export class VBox extends LayaNodeComponent<
+  Laya.VBox,
+  PropsOfClass<Laya.VBox>
+> {}
+export class Image extends LayaNodeComponent<
+  Laya.Image,
+  PropsOfClass<Laya.Image>
+> {}
+export class Button extends LayaNodeComponent<
+  Laya.Button,
+  PropsOfClass<Laya.Button>
+> {}
+export class Clip extends LayaNodeComponent<
+  Laya.Clip,
+  PropsOfClass<Laya.Clip>
+> {}
+export class ComboBox extends LayaNodeComponent<
+  Laya.ComboBox,
+  PropsOfClass<Laya.ComboBox>
+> {}
+export class Tab extends LayaNodeComponent<Laya.Tab, PropsOfClass<Laya.Tab>> {}
+export class VScrollBar extends LayaNodeComponent<
+  Laya.VScrollBar,
+  PropsOfClass<Laya.VScrollBar>
+> {}
+export class HScrollBar extends LayaNodeComponent<
+  Laya.HScrollBar,
+  PropsOfClass<Laya.HScrollBar>
+> {}
+export class VSlider extends LayaNodeComponent<
+  Laya.VSlider,
+  PropsOfClass<Laya.VSlider>
+> {}
+export class HSlider extends LayaNodeComponent<
+  Laya.HSlider,
+  PropsOfClass<Laya.HSlider>
+> {}
+export class List extends LayaNodeComponent<
+  Laya.List,
+  PropsOfClass<Laya.List>
+> {}
+export class Label extends LayaNodeComponent<
+  Laya.Label,
+  PropsOfClass<Laya.Label>
+> {}
+export class CheckBox extends LayaNodeComponent<
+  Laya.CheckBox,
+  PropsOfClass<Laya.CheckBox>
+> {}
+export class Radio extends LayaNodeComponent<
+  Laya.Radio,
+  PropsOfClass<Laya.Radio>
+> {}
+export class Panel extends LayaNodeComponent<
+  Laya.Panel,
+  PropsOfClass<Laya.Panel>
+> {}
+export class ProgressBar extends LayaNodeComponent<
+  Laya.ProgressBar,
+  PropsOfClass<Laya.ProgressBar>
+> {}
+export class TextInput extends LayaNodeComponent<
+  Laya.TextInput,
+  PropsOfClass<Laya.TextInput>
+> {}
+export class Dialog extends LayaNodeComponent<
+  Laya.Dialog,
+  PropsOfClass<Laya.Dialog>
+> {}
+export class FontClip extends LayaNodeComponent<
+  Laya.Dialog,
+  PropsOfClass<Laya.FontClip>
+> {}
 
-export interface StageProps
-  extends Konva.NodeConfig,
-    Pick<
-      React.HTMLProps<any>,
-      "className" | "role" | "style" | "tabIndex" | "title"
-    > {
-  onContentMouseOver?(evt: any): void;
-  onContentMouseMove?(evt: any): void;
-  onContentMouseOut?(evt: any): void;
-  onContentMouseDown?(evt: any): void;
-  onContentMouseUp?(evt: any): void;
-  onContentClick?(evt: any): void;
-  onContentDblClick?(evt: any): void;
-  onContentTouchStart?(evt: any): void;
-  onContentTouchMove?(evt: any): void;
-  onContentTouchEnd?(evt: any): void;
-  onContentTap?(evt: any): void;
-  onContentDblTap?(evt: any): void;
-  onContentWheel?(evt: any): void;
-}
-
-/** Stage */
-export class Stage extends KonvaContainerComponent<Konva.Stage, StageProps> {
-  getStage(): Konva.Stage;
-}
-
-/** Containers */
-export class Layer extends KonvaContainerComponent<
-  Konva.Layer,
-  Konva.LayerConfig
+// 2d
+export class Sprite extends LayaNodeComponent<
+  Laya.Sprite,
+  PropsOfClass<Laya.Sprite>
 > {}
-export class FastLayer extends KonvaContainerComponent<
-  Konva.FastLayer,
-  Konva.LayerConfig
+export class TextArea extends LayaNodeComponent<
+  Laya.TextArea,
+  PropsOfClass<Laya.TextArea>
 > {}
-export class Group extends KonvaContainerComponent<Konva.Group> {}
-export class Label extends KonvaContainerComponent<Konva.Label> {}
-
-/** Shapes */
-export class Rect extends KonvaNodeComponent<Konva.Rect, Konva.RectConfig> {}
-export class Circle extends KonvaNodeComponent<
-  Konva.Circle,
-  Konva.CircleConfig
+export class HTMLDivElement extends LayaNodeComponent<
+  Laya.HTMLDivElement,
+  PropsOfClass<Laya.HTMLDivElement>
 > {}
-export class Ellipse extends KonvaNodeComponent<
-  Konva.Ellipse,
-  Konva.EllipseConfig
+export class Animation extends LayaNodeComponent<
+  Laya.Animation,
+  PropsOfClass<Laya.Animation>
 > {}
-export class Wedge extends KonvaNodeComponent<Konva.Wedge, Konva.WedgeConfig> {}
-export class Line extends KonvaNodeComponent<Konva.Line, Konva.LineConfig> {}
-export class Sprite extends KonvaNodeComponent<
-  Konva.Sprite,
-  Konva.SpriteConfig
+export class Templet extends React.Component<PropsOfClass<Laya.Templet>> {}
+export class Skeleton extends LayaNodeComponent<
+  Laya.Skeleton,
+  PropsOfClass<Laya.Skeleton>
 > {}
-export class Image extends KonvaNodeComponent<Konva.Image, Konva.ImageConfig> {}
-export class Text extends KonvaNodeComponent<Konva.Text, Konva.TextConfig> {}
-export class TextPath extends KonvaNodeComponent<
-  Konva.TextPath,
-  Konva.TextPathConfig
-> {}
-export class Star extends KonvaNodeComponent<Konva.Star, Konva.StarConfig> {}
-export class Ring extends KonvaNodeComponent<Konva.Ring, Konva.RingConfig> {}
-export class Arc extends KonvaNodeComponent<Konva.Arc, Konva.ArcConfig> {}
-export class Tag extends KonvaNodeComponent<Konva.Tag, Konva.TagConfig> {}
-export class Path extends KonvaNodeComponent<Konva.Path, Konva.PathConfig> {}
-export class RegularPolygon extends KonvaNodeComponent<
-  Konva.RegularPolygon,
-  Konva.RegularPolygonConfig
-> {}
-export class Arrow extends KonvaNodeComponent<Konva.Arrow, Konva.ArrowConfig> {}
-export class Shape extends KonvaNodeComponent<Konva.Shape, Konva.ShapeConfig> {}

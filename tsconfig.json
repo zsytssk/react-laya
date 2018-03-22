@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowJs": true,
+    "sourceMap": true,
+    "module": "system",
+    "skipLibCheck": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "skipDefaultLibCheck": true
+  },
+  "exclude": ["node_modules"]
+}
