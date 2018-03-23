@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "webpack_dev": "webpack --colors --config webpack.config.dev.js",
-    "webpack_dev_server": "webpack-dev-server --colors --config webpack.config.dev.js",
+    "webpack_dev_server":
+      "webpack-dev-server --colors --config webpack.config.dev.js",
     "webpack_release": "webpack --config  webpack.config.rel.js"
   },
   "devDependencies": {
@@ -20,7 +21,7 @@
     "fbjs": "^0.8.16",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-laya": "^0.1.0",
+    "react-laya": "^0.1.1",
     "react-reconciler": "^0.7.0"
   }
 }

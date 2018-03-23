@@ -1,6 +1,16 @@
 ## @todo
 
-* laya export
+* @dif
+
+  * mask
+  * graphic
+  * fillTexture
+
+* @ques 为什么每次属性改变 render 中 ref 会调用两次
+
+* @ques ref 里面 node 不是我想要的类型
+
+- laya export
 
   * 有哪些 Laya....
   * .d.ts ...
@@ -8,17 +18,12 @@
     * 一个个的特殊属性
     * typescript keyof delete 私有属性
 
-* @dif
-
-  * graphic
-  * fillTexture
-
 * @ques 要不要把方法排除掉
 
-* ref 里面 node 不是我想要的类型
-
-* webgl stage 的通用设置...
+- webgl stage 的通用设置...
   * 需不需要将 Laya.stage init, 应该要这样的
+
+* chrome dev tool 高亮 inspect 方法 自定义...
 
 ## --------
 

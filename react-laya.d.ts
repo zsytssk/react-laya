@@ -38,6 +38,8 @@ declare class LayaNodeComponent<
 }
 
 // ui
+export class Box extends LayaNodeComponent<Laya.Box, PropsOfClass<Laya.Box>> {}
+// ui
 export class HBox extends LayaNodeComponent<
   Laya.HBox,
   PropsOfClass<Laya.HBox>

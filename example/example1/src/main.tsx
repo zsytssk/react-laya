@@ -1,11 +1,13 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { Stage, Text, Image } from "react-laya";
+import { Stage, Box, Text, Image } from "react-laya";
 
+console.log(process.env.NODE_ENV);
 class App extends React.Component<any, any> {
   state = {
     text: "default",
     img: "",
+    img2: "",
     rotate: 0,
     button: ""
   };
@@ -31,6 +33,7 @@ class App extends React.Component<any, any> {
       Laya.Handler.create(null, () => {
         this.setState({
           img: "comp/image.png",
+          img2: "comp/bg.png",
           button: "comp/button.png"
         });
       })
@@ -43,6 +46,7 @@ class App extends React.Component<any, any> {
         <Text text={this.state.text} color="#ffffff" />
         <Test
           skin={this.state.img}
+          vskin={this.state.img2}
           clickImage={this.clickImage}
           rotate={this.state.rotate}
         />
@@ -52,7 +56,8 @@ class App extends React.Component<any, any> {
 }
 
 type TestProps = {
-  skin: string;
+  skin?: string;
+  vskin?: string;
   rotate?: number;
   clickImage?: (any) => void;
 };
@@ -61,21 +66,33 @@ class Test extends React.Component<TestProps, any> {
   componentDidMount() {}
   render() {
     return (
-      <Image
-        ref={node => console.log(node)}
-        x={200}
-        y={200}
-        anchorX={0.5}
-        anchorY={0.5}
-        skin={this.props.skin}
-        rotation={this.props.rotate}
-        onClick={this.props.clickImage}
-      />
+      <Box>
+        <Image
+          sizeGrid="31,9,9,9"
+          skin={this.props.vskin}
+          x={169}
+          y={101}
+          anchorX={0.5}
+          anchorY={0.5}
+          width={258}
+          height={184}
+        />
+        <Image
+          ref={node => console.log(node)}
+          x={200}
+          y={200}
+          anchorX={0.5}
+          anchorY={0.5}
+          skin={this.props.skin}
+          rotation={this.props.rotate}
+          onClick={this.props.clickImage}
+        />
+      </Box>
     );
   }
 }
 
-Laya.init(500, 300);
+Laya.init(500, 300, Laya.WebGL);
 var renderelement = document.querySelector("#layaContainer div");
 let app = <App />;
 render(app, renderelement);
