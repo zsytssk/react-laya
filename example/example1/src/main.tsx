@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { Stage, Box, Text, Image } from "react-laya";
+const { Stage, Box, Text, Image } = require("../../../dist/bundle");
 
 console.log(process.env.NODE_ENV);
 class App extends React.Component<any, any> {
@@ -42,7 +42,7 @@ class App extends React.Component<any, any> {
   render() {
     let state = this.state;
     return (
-      <Stage ref={node => console.log(node)} onRightClick={this.handleClick}>
+      <Stage onRightClick={this.handleClick}>
         <Text text={this.state.text} color="#ffffff" />
         <Test
           skin={this.state.img}
@@ -78,7 +78,6 @@ class Test extends React.Component<TestProps, any> {
           height={184}
         />
         <Image
-          ref={node => console.log(node)}
           x={200}
           y={200}
           anchorX={0.5}
