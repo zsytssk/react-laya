@@ -5,6 +5,7 @@ import { Router, Route, Switch } from "react-router";
 import { createHashHistory } from "history";
 import { Page } from "./page";
 import { Load } from "./load";
+import { Test } from "./test";
 const { Stage } = require("../../../dist/bundle");
 
 class App extends React.Component<any, any> {
@@ -17,6 +18,7 @@ class App extends React.Component<any, any> {
           <Switch>
             <Route path="/load" component={Load} />
             <Route exact path="/page" component={Page} />
+            <Route exact path="/test" component={Test} />
           </Switch>
         </Router>
       </Stage>
@@ -24,6 +26,6 @@ class App extends React.Component<any, any> {
   }
 }
 
-Laya.init(500, 300, Laya.WebGL);
+Laya.init(600, 400, Laya.WebGL);
 var renderelement = document.querySelector("#layaContainer div");
 render(<App />, renderelement);
