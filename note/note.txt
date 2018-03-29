@@ -1,6 +1,8 @@
 ## @todo
 
-* @dif
+* @ note 用 x="0" 这种形式可能有问题 x = {0} 是没有问题的
+
+* @difdd
 
   * mask
   * graphic

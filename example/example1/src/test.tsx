@@ -203,7 +203,14 @@ export class Test extends React.Component<any, any> {
           labelColors="#ff0000"
           editorInfo="compId=35"
         />
-        <Box x="41" y="197" var="box" editorInfo="compId=36">
+        <Box
+          x="41"
+          y="197"
+          var="box"
+          width="150"
+          height="174"
+          editorInfo="compId=36"
+        >
           <ProgressBar
             y="70"
             skin="comp/progress.png"
@@ -214,7 +221,8 @@ export class Test extends React.Component<any, any> {
             editorInfo="compId=37"
           />
           <Label
-            y="103"
+            y={103}
+            x={0}
             skin="comp/label.png"
             text="This is a Label"
             width="137"
@@ -224,7 +232,8 @@ export class Test extends React.Component<any, any> {
             editorInfo="compId=38"
           />
           <TextInput
-            y="148"
+            x={0}
+            y={148}
             skin="comp/textinput.png"
             text="textinput"
             width="150"
