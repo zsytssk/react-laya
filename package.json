@@ -1,7 +1,7 @@
 {
   "name": "react-laya",
   "description": "React binding to canvas element via laya framework",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": ["react", "canvas", "jsx", "laya"],
   "bugs": "https://github.com/zsytssk/react-laya/issues",
   "license": "MIT",
