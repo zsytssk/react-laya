@@ -1,5 +1,7 @@
 ## 2018-03-29 09:30:01
 
+* react router hash
+
 * @ques 如何在加载的过程中显示 loading, 而且 loading 进度条
 
   * 如何预先加载这些资源

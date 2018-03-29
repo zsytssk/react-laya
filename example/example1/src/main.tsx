@@ -1,8 +1,10 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { Router, Route } from "react-router";
-import { createBrowserHistory } from "history";
+import * as Loadable from "react-loadable";
+import { Router, Route, Switch } from "react-router";
+import { createHashHistory } from "history";
 import { Page } from "./page";
+import { Load } from "./load";
 const { Stage } = require("../../../dist/bundle");
 
 class App extends React.Component<any, any> {
@@ -11,7 +13,12 @@ class App extends React.Component<any, any> {
     let state = this.state;
     return (
       <Stage onRightClick={this.handleClick}>
-        <Page />
+        <Router history={createHashHistory()}>
+          <Switch>
+            <Route path="/load" component={Load} />
+            <Route exact path="/page" component={Page} />
+          </Switch>
+        </Router>
       </Stage>
     );
   }
@@ -19,10 +26,4 @@ class App extends React.Component<any, any> {
 
 Laya.init(500, 300, Laya.WebGL);
 var renderelement = document.querySelector("#layaContainer div");
-let app = <App />;
-render(
-  <Router history={createBrowserHistory()}>
-    <Route path="/" component={App} />
-  </Router>,
-  renderelement
-);
+render(<App />, renderelement);

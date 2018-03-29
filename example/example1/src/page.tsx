@@ -1,19 +1,9 @@
 import * as React from "react";
 import { render } from "react-dom";
 import * as Loadable from "react-loadable";
+import { Load } from "./load";
 
 const { Box, Text, Image } = require("../../../dist/bundle");
-
-// Laya.loader.load(
-//   "res/atlas/comp.atlas",
-//   Laya.Handler.create(null, () => {
-//     this.setState({
-//       img: "comp/image.png",
-//       img2: "comp/bg.png",
-//       button: "comp/button.png"
-//     });
-//   })
-// );
 
 type PageProps = {
   skin?: string;
@@ -23,8 +13,26 @@ type PageProps = {
 };
 
 export class Page extends React.Component<PageProps, any> {
-  componentDidMount() {}
+  state = {
+    loaded: false,
+    percent: 0
+  };
+  componentDidMount() {
+    Laya.loader.load(
+      "res/atlas/comp.atlas",
+      Laya.Handler.create(null, () => {
+        this.setState({ loaded: true });
+      }),
+      Laya.Handler.create(null, percent => {
+        this.setState({ percent });
+      })
+    );
+  }
   render() {
+    let loaded = this.state.loaded;
+    if (!loaded) {
+      return <Load percent={this.state.percent} />;
+    }
     return (
       <Box>
         <Image
@@ -42,3 +50,8 @@ export class Page extends React.Component<PageProps, any> {
     );
   }
 }
+
+// export const LoadableComponent = Loadable({
+//   loader: () => Page,
+//   loading: Load
+// });
