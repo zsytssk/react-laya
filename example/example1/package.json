@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "scripts": {
     "webpack_dev": "webpack --colors --config webpack.config.dev.js",
-    "webpack_dev_server":
-      "webpack-dev-server --colors --config webpack.config.dev.js",
+    "webpack_dev_server": "webpack-dev-server --colors --config webpack.config.dev.js",
     "webpack_release": "webpack --config  webpack.config.rel.js"
   },
   "devDependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-loadable": "^5.3.3",
+    "@types/react-router": "^4.0.23",
     "ts-loader": "^4.1.0",
     "typescript": "^2.7.2",
     "webpack": "^4.1.1",
@@ -16,12 +19,12 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "@types/react": "^16.0.40",
-    "@types/react-dom": "^16.0.4",
     "fbjs": "^0.8.16",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-laya": "^0.1.1",
-    "react-reconciler": "^0.7.0"
+    "react-loadable": "^5.3.1",
+    "react-reconciler": "^0.7.0",
+    "react-router": "^4.2.0"
   }
 }
