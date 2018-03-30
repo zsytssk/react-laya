@@ -52,6 +52,7 @@ export class Page extends React.Component<PageProps, any> {
         <Switch>
           <Route path={`${this.props.match.path}/topic`} component={Topic} />
           <Route path={`${this.props.match.path}/load`} component={Load} />
+          <Route exact path={`${this.props.match.path}`} />
           <Redirect path="*" to="/load" />
         </Switch>
       </Box>

@@ -16,7 +16,7 @@ class App extends React.Component<any, any> {
       <Stage onRightClick={this.handleClick}>
         <HashRouter>
           <Switch>
-            <Route path="load" component={Load} />
+            <Route path="/load" component={Load} />
             <Route path="/page" component={Page} />
             <Route path="/test" component={Test} />
             <Redirect path="*" to="/load" />
