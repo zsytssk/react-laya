@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import * as Loadable from "react-loadable";
-import { Router, Route, Switch } from "react-router";
+import { Router, Route, Switch, Redirect, HashRouter } from "react-router-dom";
 import { createHashHistory } from "history";
 import { Page } from "./page";
 import { Load } from "./load";
@@ -14,13 +14,14 @@ class App extends React.Component<any, any> {
     let state = this.state;
     return (
       <Stage onRightClick={this.handleClick}>
-        <Router history={createHashHistory()}>
+        <HashRouter>
           <Switch>
-            <Route path="/load" component={Load} />
-            <Route exact path="/page" component={Page} />
-            <Route exact path="/test" component={Test} />
+            <Route path="load" component={Load} />
+            <Route path="/page" component={Page} />
+            <Route path="/test" component={Test} />
+            <Redirect path="*" to="/load" />
           </Switch>
-        </Router>
+        </HashRouter>
       </Stage>
     );
   }

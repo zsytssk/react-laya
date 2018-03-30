@@ -1,6 +1,8 @@
 import * as React from "react";
 import { render } from "react-dom";
 import * as Loadable from "react-loadable";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { createHashHistory } from "history";
 import { Load } from "./load";
 
 const { Box, Text, Image } = require("../../../dist/bundle");
@@ -10,6 +12,7 @@ type PageProps = {
   vskin?: string;
   rotate?: number;
   clickImage?: (any) => void;
+  match: any;
 };
 
 export class Page extends React.Component<PageProps, any> {
@@ -30,6 +33,7 @@ export class Page extends React.Component<PageProps, any> {
   }
   render() {
     let loaded = this.state.loaded;
+    console.log(this.props.match);
     if (!loaded) {
       return <Load percent={this.state.percent} />;
     }
@@ -45,13 +49,18 @@ export class Page extends React.Component<PageProps, any> {
           width={258}
           height={184}
         />
-        <Image x={200} y={200} anchorX={0.5} anchorY={0.5} skin="comp/bg.png" />
+        <Switch>
+          <Route path={`${this.props.match.path}/topic`} component={Topic} />
+          <Route path={`${this.props.match.path}/load`} component={Load} />
+          <Redirect path="*" to="/load" />
+        </Switch>
       </Box>
     );
   }
 }
 
-// export const LoadableComponent = Loadable({
-//   loader: () => Page,
-//   loading: Load
-// });
+function Topic() {
+  return (
+    <Image x={200} y={200} anchorX={0.5} anchorY={0.5} skin="comp/bg.png" />
+  );
+}
