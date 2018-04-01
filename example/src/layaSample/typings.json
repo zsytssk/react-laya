@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "LayaAir": "github:layabox/layaair/bin/ts/LayaAir.d.ts#master"
+  },
+  "dependencies": {}
+}

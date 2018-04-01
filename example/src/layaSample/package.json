@@ -1,0 +1,23 @@
+{
+  "name": "webpack_test",
+  "main": "index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "webpack_dev": "webpack --colors --config webpack.config.js",
+    "webpack_dev_server": "webpack-dev-server --colors --config webpack.config.js"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-laya": "^0.1.1"
+  }
+}

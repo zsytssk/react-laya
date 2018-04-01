@@ -38,8 +38,15 @@ declare class LayaNodeComponent<
 }
 
 // ui
+export class View extends LayaNodeComponent<
+  Laya.View,
+  PropsOfClass<Laya.View>
+> {}
+export class ViewStact extends LayaNodeComponent<
+  Laya.ViewStact,
+  PropsOfClass<Laya.ViewStact>
+> {}
 export class Box extends LayaNodeComponent<Laya.Box, PropsOfClass<Laya.Box>> {}
-// ui
 export class HBox extends LayaNodeComponent<
   Laya.HBox,
   PropsOfClass<Laya.HBox>
@@ -96,6 +103,10 @@ export class CheckBox extends LayaNodeComponent<
 export class Radio extends LayaNodeComponent<
   Laya.Radio,
   PropsOfClass<Laya.Radio>
+> {}
+export class RadioGroup extends LayaNodeComponent<
+  Laya.RadioGroup,
+  PropsOfClass<Laya.RadioGroup>
 > {}
 export class Panel extends LayaNodeComponent<
   Laya.Panel,
