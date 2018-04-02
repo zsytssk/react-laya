@@ -17,12 +17,6 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-loadable@^5.3.3":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.3.3.tgz#ca0625ab41fb222083adcf767de36f0be329acec"
-  dependencies:
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^16.0.40":
   version "16.1.0"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.1.0.tgz#6c0e9955ce73f332b4a1948d45decaf18c764c6e"

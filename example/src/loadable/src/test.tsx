@@ -23,7 +23,7 @@ import {
   HScrollBar
 } from "react-laya";
 
-type TestProps = {
+export type TestProps = {
   test: number;
 };
 
@@ -130,7 +130,7 @@ export class Test extends React.Component<TestProps, any> {
           <Label
             y={103}
             x={0}
-            text="This is a Label"
+            text={"This is a Label" + this.props.test}
             width={137}
             height={26}
             fontSize={20}
