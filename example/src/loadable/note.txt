@@ -1,4 +1,0 @@
-* @ques 如何设置 Loadable 配置的类型
-  * loadingRender
-  * loader setState state
-  * loader render
