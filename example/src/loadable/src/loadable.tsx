@@ -4,7 +4,7 @@ import { Box } from "react-laya";
 type LoadableOptions<Props> = {
   loader(setState: (state: PropsOfClass<LoadableState>) => void): void;
   loadingRender(state: LoadableState): React.ReactNode;
-  render(props: Props): React.ReactNode;
+  render(props: Props): React.ReactElement<Props>;
   delay?: number;
 };
 

@@ -1,4 +1,6 @@
-##
+* @ques 能不能将 LoadableOptions 中 render return 出来的对象的类型 来决定 loadable option 返回的类型
+  * ....
+  * 能不能获取 Test 本身的 Props 的类型..
 
 ## 2018-03-31 09:47:49
 
