@@ -3,7 +3,7 @@ import { Box } from "react-laya";
 
 type LoadableOptions<Props> = {
   loader(setState: (state: PropsOfClass<LoadableState>) => void): void;
-  loadingRender(state: LoadableState): React.ReactNode;
+  loadingRender?(state: LoadableState): React.ReactNode;
   render(props: Props): React.ReactNode;
   delay?: number;
 };
@@ -49,7 +49,11 @@ export function Loadable<Props>(option: LoadableOptions<Props>) {
       if (this.state.loaded) {
         return option.render(this.props);
       }
-      return option.loadingRender(this.state);
+      if (option.loadingRender) {
+        return option.loadingRender(this.state);
+      } else {
+        return <Box />;
+      }
     }
   }
   return LoadableClass;

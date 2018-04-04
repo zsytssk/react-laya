@@ -5,11 +5,29 @@ import { Loadable } from "../loadable";
 import { Load } from "../load";
 import { Pop, PopUIProps } from "./common";
 
-export class Alert extends Pop {
-  componentDidMount() {}
+type AlertProps = {
+  x?: number;
+  y?: number;
+  is_show?: boolean;
+  name: string;
+  showPop: () => void;
+  hidePop: () => void;
+};
+
+export class Alert extends Pop<AlertProps> {
+  componentDidMount() {
+    if (this.props.is_show) {
+      this.show();
+    }
+  }
   popUi = (props: PopUIProps) => {
     return (
-      <Dialog x={143} y={86} ref={node => (this.node = node as any)}>
+      <Dialog
+        x={this.props.x}
+        y={this.props.y}
+        ref={node => (this.node = node as any)}
+        visible={this.props.is_show}
+      >
         <Image
           width={258}
           skin="comp/bg.png"
@@ -18,9 +36,14 @@ export class Alert extends Pop {
           y={0}
           sizeGrid="30,10,6,8"
         />
-        <Button skin="comp/btn_close.png" x={224} y={3} onClick={props.hide} />
+        <Button
+          skin="comp/btn_close.png"
+          x={224}
+          y={3}
+          onClick={this.props.hidePop}
+        />
         <Text
-          text="hello world!"
+          text={`hello world ${this.props.name}`}
           x={44}
           y={69}
           width={156}
@@ -35,7 +58,7 @@ export class Alert extends Pop {
   };
 }
 
-export const AlertLoadable = Loadable({
+export const AlertLoadable = Loadable<AlertProps>({
   loader: setState => {
     Laya.loader.load(
       "res/atlas/comp.atlas",

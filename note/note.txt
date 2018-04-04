@@ -1,4 +1,6 @@
-* @ques 能不能将 LoadableOptions 中 render return 出来的对象的类型 来决定 loadable option 返回的类型
+* editorInfo="compId=9" 这种属性 要不要放在 LayaComponent 的属性中
+
+- @ques 能不能将 LoadableOptions 中 render return 出来的对象的类型 来决定 loadable option 返回的类型
   * ....
   * 能不能获取 Test 本身的 Props 的类型..
 
