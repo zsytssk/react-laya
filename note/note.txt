@@ -4,6 +4,8 @@
   * ....
   * 能不能获取 Test 本身的 Props 的类型..
 
+* react best way component communicate
+
 ## 2018-03-31 09:47:49
 
 * 每一个 example 里面都有一套相同的 laya 代码太恶心了吧
