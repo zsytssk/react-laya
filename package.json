@@ -20,25 +20,15 @@
     "url": "git@github.com:zsytssk/react-laya.git"
   },
   "dependencies": {
-    "fbjs": "^0.8.16",
     "react-reconciler": "^0.7.0"
   },
-  "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x"
-  },
   "devDependencies": {
-    "react-router": "^4.2.0",
-    "@types/react": "^16.0.40",
+    "@types/react": "^16.9.17",
     "@types/react-dom": "^16.0.4",
-    "chai": "^4.1.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "react": "16.x",
     "react-dom": "16.x",
-    "sinon": "^4.4.3",
-    "webpack": "^4.3.0",
-    "webpack-cli": "^2.0.13"
+    "react-router": "^5.1.2",
+    "typescript": "^5.1.2"
   },
   "typings": "react-laya.d.ts",
   "files": [
