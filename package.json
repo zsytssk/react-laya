@@ -28,7 +28,7 @@
     "react": "16.x",
     "react-dom": "16.x",
     "react-router": "^5.1.2",
-    "typescript": "^5.1.2"
+    "typescript": "^3.7.5"
   },
   "typings": "react-laya.d.ts",
   "files": [
