@@ -1,6 +1,6 @@
 - @ques render from react-dom 能不能自己写一个
 
-- https://blog.atulr.com/react-custom-renderer-2/
+- https://blog.atulr.com/react-custom-renderer-3/
 
 ## 2020-01-18 10:22:57
 
@@ -10,7 +10,7 @@
   - ....
   - 能不能获取 Test 本身的 Props 的类型..
 
-- react best way component communicate
+- react resetAfterCommitbest way component communicate
 
 ## 2018-03-31 09:47:49
 
